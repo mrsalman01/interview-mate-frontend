@@ -2,9 +2,7 @@ import pool from "@/lib/db";
 import { verifyToken } from "@/lib/auth";
 import { getSessionState } from "@/lib/adk";
 
-const ADK_URL = (
-  process.env.ADK_URL || "http://localhost:8000"
-).replace(/\/+$/, "");
+const ADK_URL = process.env.ADK_URL || "http://localhost:8000";
 
 export async function POST(request: Request) {
   const user = verifyToken(request);

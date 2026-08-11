@@ -1,6 +1,4 @@
-const ADK_URL = (
-  process.env.ADK_URL || "http://localhost:8000"
-).replace(/\/+$/, "");
+const ADK_URL = process.env.ADK_URL || "http://localhost:8000";
 
 export async function getSessionState(userId: string, sessionId: string) {
   const response = await fetch(
