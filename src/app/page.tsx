@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import VoiceButton from "@/components/VoiceButton";
 import SpeakButton from "@/components/SpeakButton";
+import Logo from "@/lib/logo";
 
 interface Message {
   role: "user" | "assistant";
@@ -183,10 +184,10 @@ export default function Home() {
       <div className="w-72 bg-slate-900/80 backdrop-blur-lg border-r border-blue-900/40 flex flex-col">
         <div className="p-4 border-b border-blue-900/40">
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-lg">
-              🎯
+            <div className="w-50 h-9 flex items-center justify-center text-lg">
+              <Logo src = {"/Logo.png"} />
             </div>
-            <h1 className="text-white font-bold">InterviewMate</h1>
+            {/* <h1 className="text-white font-bold">Interventa</h1> */}
           </div>
           <button
             onClick={openNewSessionModal}
@@ -256,7 +257,9 @@ export default function Home() {
         {!activeSessionId ? (
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center">
-              <div className="text-6xl mb-4">🎯</div>
+              <div className="flex justify-center text-6xl mb-3">
+                <Logo />
+              </div>
               <h2 className="text-white text-xl font-semibold mb-2">
                 Select or start an interview
               </h2>
@@ -278,7 +281,7 @@ export default function Home() {
                   >
                     {msg.role === "assistant" && (
                       <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-sm flex-shrink-0">
-                        🎯
+                        ✨
                       </div>
                     )}
                     <div className="flex flex-col gap-1">
@@ -303,7 +306,7 @@ export default function Home() {
                 {sending && (
                   <div className="flex items-end gap-2 justify-start">
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-sm flex-shrink-0">
-                      🎯
+                      ✨
                     </div>
                     <div className="bg-slate-800/80 border border-blue-900/40 px-4 py-3 rounded-2xl rounded-bl-md flex gap-1.5">
                       <span className="w-2 h-2 bg-blue-400 rounded-full animate-[bounce_1s_infinite]"></span>
